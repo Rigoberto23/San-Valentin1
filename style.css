@@ -1,10 +1,15 @@
 body {
-    margin: 0;
-    background: linear-gradient(135deg, #ff5f9e, #2b0018);
-    font-family: 'Segoe UI', sans-serif;
-    overflow: hidden;
-    color: white;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  text-align: center;
+
+  background-image: url("fondo.jpg"); /* 👈 AQUÍ */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
+
 
 .center {
     position: absolute;
@@ -66,3 +71,4 @@ button:hover {
     margin-top: 20px;
     font-size: 1.15em;
 }
+
