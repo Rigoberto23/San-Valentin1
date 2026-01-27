@@ -117,6 +117,31 @@ button {
   color: white;
   cursor: pointer;
 }
+.cartita-overlay {
+  position: relative; /* necesario para ubicar textos */
+}
+
+/* 💌 DEDICATORIA */
+.dedicatoria {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Great Vibes', cursive;
+  font-size: 22px;
+  color: #7b1e28;
+}
+
+.dedicatoria .izq {
+  text-align: left;
+}
+
+.dedicatoria .der {
+  text-align: right;
+}
+
 
 
 
