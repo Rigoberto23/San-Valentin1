@@ -1,8 +1,5 @@
 const app = document.getElementById("app");
 
-const nombreElla = "MI AMOR";
-const tuNombre = "Rigoberto";
-
 const recuerdos = [
   { tipo: "foto", src: "img1.jpeg", frase: "Tu sonrisa es mi lugar favorito ❤️" },
   { tipo: "foto", src: "img2.jpeg", frase: "Así se ve alguien cuando ilumina mi vida ✨" },
@@ -16,39 +13,55 @@ const recuerdos = [
 
 let indice = 0;
 
-/* FLUJO */
-function irARazones() {
-  document.getElementById("cartita").classList.add("hidden");
-  document.getElementById("razones").classList.remove("hidden");
-}
+/* 🟣 CARTITA */
+function mostrarCartita() {
+  app.innerHTML = `
+    <div class="center fade-in">
+      <div class="cartita-overlay">
+        <div class="dedicatoria">
+          <span>De Rigoberto</span>
+          <span>Para Alexa</span>
+        </div>
 
-function iniciarRecuerdos() {
-  document.getElementById("razones").classList.add("hidden");
-  app.classList.remove("hidden");
-  mostrarInicio();
-}
+        <p>Te tengo una sorpresa…</p>
+        <p>No es por una fecha.</p>
+        <p>Es porque te amo ❤️</p>
 
-function mostrarInicio() {
-  app.innerHTML = "";
-
-  const inicio = document.createElement("div");
-  inicio.className = "center fade-in";
-  inicio.innerHTML = `
-    <h1>Hola ${nombreElla} ❤️</h1>
-    <p>Quiero mostrarte algo…</p>
-    <button>Ver recuerdos 💖</button>
+        <button onclick="mostrarRazones()">Descubrir 💌</button>
+      </div>
+    </div>
   `;
+}
 
-  inicio.querySelector("button").onclick = () => {
-    inicio.remove();
-    indice = 0;
-    mostrarRecuerdo();
-  };
+/* 💖 RAZONES */
+function mostrarRazones() {
+  app.innerHTML = `
+    <div class="center fade-in">
+      <div class="razones-overlay">
+        <h2>Razones por las que te amo</h2>
 
-  app.appendChild(inicio);
+        <div class="razones-grid">
+          <div>Porque eres tú 💕</div>
+          <div>Porque tu sonrisa me calma ✨</div>
+          <div>Porque contigo soy yo 💫</div>
+          <div>Porque haces hogar mi caos 🫶</div>
+        </div>
+
+        <button onclick="iniciarRecuerdos()">Continuar 💕</button>
+      </div>
+    </div>
+  `;
+}
+
+/* 📸🎥 RECUERDOS */
+function iniciarRecuerdos() {
+  indice = 0;
+  mostrarRecuerdo();
 }
 
 function mostrarRecuerdo() {
+  app.innerHTML = "";
+
   const cont = document.createElement("div");
   cont.className = "center fade-in";
 
@@ -82,7 +95,6 @@ function mostrarRecuerdo() {
   setTimeout(() => media.classList.add("show"), 100);
 
   btn.onclick = () => {
-    cont.remove();
     indice++;
     indice < recuerdos.length ? mostrarRecuerdo() : mostrarFinal();
   };
@@ -93,10 +105,13 @@ function mostrarFinal() {
     <div class="center fade-in">
       <h1>Te amo ❤️</h1>
       <p>Gracias por existir en mi vida.</p>
-      <b>${tuNombre}</b>
+      <b>Rigoberto</b>
     </div>
   `;
 }
+
+/* 🚀 ARRANCA */
+mostrarCartita();
 
 
 
