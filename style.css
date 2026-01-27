@@ -1,165 +1,136 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Georgia', cursive;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    min-height: 100vh;
-    overflow-x: hidden;
-    color: #fff;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
-/* Fondo general */
+/* 🌸 FONDO */
 .background {
-    position: fixed;
-    inset: 0;
-    background: url("fondo.jpg") center/cover no-repeat;
-    filter: brightness(0.5);
-    z-index: -1;
+  position: fixed;
+  inset: 0;
+  background: url("fondo.jpg") center/cover no-repeat;
+  z-index: -1;
 }
 
-/* Centro general */
-.center {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-    animation: fadeIn 1s ease;
+/* TRANSICIONES */
+.fade-in {
+  animation: fade 1s ease;
 }
 
-/* Botones */
+@keyframes fade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hidden {
+  display: none;
+}
+
+/* 💌 CARTITA */
+.cartita {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartita-overlay {
+  background: url("cartita.jpg") center/contain no-repeat;
+  width: 90%;
+  max-width: 612px;
+  aspect-ratio: 612 / 413;
+
+  position: relative;
+  text-align: center;
+  padding: 40px;
+
+  font-family: 'Great Vibes', cursive;
+  font-size: 26px;
+  color: #7b1e28;
+}
+
+.dedicatoria {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  right: 25px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
 button {
-    margin-top: 20px;
-    padding: 14px 28px;
-    border: none;
-    border-radius: 30px;
-    background: #ff7eb3;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #c9184a;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-button:hover {
-    transform: scale(1.05);
-    background: #ff4f9a;
-}
-
-/* Carta */
-.carta {
-    background: url("carta.png") center/contain no-repeat;
-    width: 90%;
-    max-width: 380px;
-    height: 260px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: #5a2a2a;
-    animation: slideUp 1s ease;
-}
-
-.carta h2 {
-    font-size: 1.2rem;
-}
-
-.carta p {
-    font-size: 0.95rem;
-}
-
-.carta .firmas {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-}
-
-/* Razones */
+/* 💖 RAZONES */
 .razones {
-    background: url("razones.jpg") center/cover no-repeat;
-    border-radius: 20px;
-    padding: 30px 20px;
-    width: 100%;
-    max-width: 500px;
-    animation: fadeIn 1s ease;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.razon {
-    display: flex;
-    margin: 12px 0;
+.razones-overlay {
+  background: url("razones.jpg") center/cover no-repeat;
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
 }
 
-.razon.izq {
-    justify-content: flex-start;
+.razones-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin: 20px 0;
 }
 
-.razon.der {
-    justify-content: flex-end;
+/* 📸🎥 RECUERDOS */
+#app {
+  min-height: 100vh;
 }
 
-.razon span {
-    background: rgba(0,0,0,0.6);
-    padding: 10px 16px;
-    border-radius: 20px;
-    max-width: 70%;
-    font-size: 0.9rem;
+.center {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
 }
 
-/* Fotos y videos */
 .photo, .video {
-    max-width: 90%;
-    max-height: 60vh;
-    border-radius: 20px;
-    opacity: 0;
-    transform: scale(0.95);
-    transition: all 1s ease;
+  max-width: 90%;
+  max-height: 60vh;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 1s;
 }
 
 .show {
-    opacity: 1;
-    transform: scale(1);
+  opacity: 1;
 }
 
 .frase {
-    margin-top: 15px;
-    font-size: 1.1rem;
-    padding: 0 10px;
+  font-size: 18px;
+  color: white;
 }
-
-/* Animaciones */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Mobile first */
-@media (max-width: 480px) {
-    .carta {
-        height: 240px;
-    }
-    .frase {
-        font-size: 1rem;
-    }
-}
-
-
-
-
 
 
 
