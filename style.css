@@ -133,9 +133,11 @@ button {
 }
 .letra {
   display: inline-block;
-  opacity: 0;
-  animation: rebote 0.4s ease forwards;
+  opacity: 1;              /* queda visible */
+  animation: rebote 0.5s ease forwards;
+  animation-fill-mode: both; /* mantiene el estado final */
 }
+
 
 @keyframes rebote {
   0% {
@@ -148,8 +150,10 @@ button {
   }
   100% {
     transform: translateY(0);
+    opacity: 1;
   }
 }
+
 
 
 
