@@ -33,7 +33,8 @@ function irARazones() {
     el.textContent = "";
 
     setTimeout(() => {
-      escribirTexto(el, texto, 35);
+      escribirTextoRebote(el, texto, 40);
+
     }, index * 800); // delay entre razones 💕
   });
 }
@@ -94,7 +95,8 @@ function mostrarRecuerdo() {
 
   const frase = document.createElement("div");
   frase.className = "frase";
-  escribirTexto(frase, item.frase, 35);
+  escribirTextoRebote(frase, item.frase, 40);
+
 
 
   const btn = document.createElement("button");
@@ -121,16 +123,21 @@ function mostrarFinal() {
     </div>
   `;
 }
-function escribirTexto(elemento, texto, velocidad = 40) {
-  elemento.textContent = "";
+function escribirTextoRebote(elemento, texto, velocidad = 40) {
+  elemento.innerHTML = "";
   let i = 0;
 
   const intervalo = setInterval(() => {
-    elemento.textContent += texto.charAt(i);
+    const span = document.createElement("span");
+    span.className = "letra";
+    span.textContent = texto.charAt(i);
+    elemento.appendChild(span);
+
     i++;
     if (i >= texto.length) clearInterval(intervalo);
   }, velocidad);
 }
+
 
 
 
