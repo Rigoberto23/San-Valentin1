@@ -24,9 +24,20 @@ function irARazones() {
   cartita.classList.add("hidden");
   razones.classList.remove("hidden");
 
-  // 🔽 Scroll suave hacia Razones
   razones.scrollIntoView({ behavior: "smooth" });
+
+  const items = document.querySelectorAll(".razon");
+
+  items.forEach((el, index) => {
+    const texto = el.textContent;
+    el.textContent = "";
+
+    setTimeout(() => {
+      escribirTexto(el, texto, 35);
+    }, index * 800); // delay entre razones 💕
+  });
 }
+
 
 function iniciarRecuerdos() {
   const razones = document.getElementById("razones");
@@ -83,7 +94,8 @@ function mostrarRecuerdo() {
 
   const frase = document.createElement("div");
   frase.className = "frase";
-  frase.innerText = item.frase;
+  escribirTexto(frase, item.frase, 35);
+
 
   const btn = document.createElement("button");
   btn.innerText = indice < recuerdos.length - 1 ? "Siguiente 💕" : "Final ❤️";
@@ -119,6 +131,7 @@ function escribirTexto(elemento, texto, velocidad = 40) {
     if (i >= texto.length) clearInterval(intervalo);
   }, velocidad);
 }
+
 
 
 
