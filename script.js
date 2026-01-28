@@ -126,7 +126,7 @@ function mostrarFinal() {
 function escribirTextoRebote(elemento, texto, velocidad = 70) {
   elemento.innerHTML = "";
 
-  const caracteres = Array.from(texto); // 🔥 soporta emojis
+  const caracteres = Array.from(texto); // ✅ emojis correctos
   let i = 0;
 
   const intervalo = setInterval(() => {
@@ -134,7 +134,7 @@ function escribirTextoRebote(elemento, texto, velocidad = 70) {
     span.className = "letra";
 
     if (caracteres[i] === " ") {
-      span.innerHTML = "&nbsp;"; // 🔑 mantiene espacios
+      span.innerHTML = "&nbsp;"; // ✅ espacios reales
     } else {
       span.textContent = caracteres[i];
     }
@@ -145,6 +145,8 @@ function escribirTextoRebote(elemento, texto, velocidad = 70) {
     if (i >= caracteres.length) clearInterval(intervalo);
   }, velocidad);
 }
+
+
 
 
 
