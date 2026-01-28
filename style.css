@@ -131,6 +131,26 @@ button {
   font-size: 18px;
   color: white;
 }
+.letra {
+  display: inline-block;
+  opacity: 0;
+  animation: rebote 0.4s ease forwards;
+}
+
+@keyframes rebote {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 
 
 
