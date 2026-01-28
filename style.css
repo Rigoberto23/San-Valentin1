@@ -154,6 +154,10 @@ button {
   }
 }
 
+.razon, .frase {
+  white-space: pre-wrap;
+}
+
 
 
 
