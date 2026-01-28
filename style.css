@@ -83,8 +83,8 @@ button {
 
 .razones-overlay {
   background: url("razones.jpg") center/cover no-repeat;
-  width: 90%;
-  max-width: 500px;
+  width: 95%;
+  max-width: 700px;   /* ← antes 500px */
   padding: 30px;
   border-radius: 20px;
   color: white;
@@ -160,6 +160,7 @@ button {
     opacity: 1;
   }
 }
+
 
 
 
