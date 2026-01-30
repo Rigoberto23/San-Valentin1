@@ -4,13 +4,13 @@ const nombreElla = "MI AMOR";
 const tuNombre = "Rigoberto";
 
 const recuerdos = [
-  { tipo: "foto", src: "img1.jpeg", frase: "Tu sonrisa es mi lugar favorito ❤️" },
-  { tipo: "foto", src: "img2.jpeg", frase: "Así se ve alguien cuando ilumina mi vida ✨" },
-  { tipo: "video", src: "vid1.mp4", frase: "Este momento vive en mi corazón 🎥💕" },
+  { tipo: "foto", src: "img1.jpeg", frase: "Eres mi suerte diaria. ❤️" },
+  { tipo: "foto", src: "img2.jpeg", frase: "Tú haces que todo valga la pena ✨" },
+  { tipo: "video", src: "vid1.mp4", frase: "Mi lugar seguro 💕" },
   { tipo: "foto", src: "img3.jpeg", frase: "No necesito más, si eres tú 💖" },
   { tipo: "video", src: "vid2.mp4", frase: "Cada risa contigo vale oro 😍" },
   { tipo: "foto", src: "img4.jpeg", frase: "Siempre tú, en todas mis versiones 💫" },
-  { tipo: "video", src: "vid3.mp4", frase: "Contigo todo tiene sentido 💕" },
+  { tipo: "video", src: "vid3.mp4", frase: "Momentos así se quedan en el corazón 🎥💕" },
   { tipo: "foto", src: "img5.jpeg", frase: "Te elijo hoy y siempre ❤️" }
 ];
 
@@ -145,6 +145,7 @@ function escribirTextoRebote(elemento, texto, velocidad = 70) {
     if (i >= caracteres.length) clearInterval(intervalo);
   }, velocidad);
 }
+
 
 
 
